@@ -1,0 +1,12 @@
+browser opened!!!!:https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+Entered user name:Admin
+Entered user name:admin123
+logged
+Clicked requirement
+clicked button
+added to candidate
+Entered fname:srini
+Entered mname:kamali
+Entered lname:amirgokulkutty
+Entered email:srikamaliamirgokulkutty@gmail.com
+entered mobile:9988776655

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-07T00:06:18.756125" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginTest" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\LoginTest.robot">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>browser open</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-07T00:06:24.604735" elapsed="0.000699"/>
+</kw>
+<test id="s1-t1" name="Add Candidate Test" line="30">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Login To Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-07T00:06:24.608302" elapsed="0.000548"/>
+</kw>
+<kw name="browser open" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-07T00:06:24.610925" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-07T00:06:24.610476" elapsed="11.625849"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-07T00:06:36.238049" elapsed="12.068822"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-08-07T00:06:24.609486" elapsed="23.697738"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-07T00:06:53.309589" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-07T00:06:48.308080" elapsed="5.002007"/>
+</kw>
+<kw name="Enter user name" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-07T00:06:53.315011" level="INFO">Typing text 'name:username' into text field 'name:username'.</msg>
+<arg>${username}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-07T00:06:53.313422" elapsed="0.182257"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-08-07T00:06:53.311805" elapsed="0.184027"/>
+</kw>
+<kw name="Enter password" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-07T00:06:53.498562" level="INFO">Typing text 'name:password' into text field 'name:password'.</msg>
+<arg>${password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-07T00:06:53.497079" elapsed="0.145084"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-08-07T00:06:53.496368" elapsed="0.145946"/>
+</kw>
+<kw name="click login" owner="resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-07T00:06:53.643300" level="INFO">Clicking button 'xpath://div[@class='orangehrm-login-form']//form//div[3]/button'.</msg>
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-07T00:06:53.643059" elapsed="0.126939"/>
+</kw>
+<status status="PASS" start="2025-08-07T00:06:53.642718" elapsed="0.127651"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-08-07T00:07:43.635346" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-54.png"&gt;&lt;img src="selenium-screenshot-54.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-07T00:07:43.635961" level="FAIL">Element 'xpath://div[@class='oxd-sidepanel-body']//ul//li[5]/a' did not appear in 10 seconds.</msg>
+<arg>${requirement_link}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-08-07T00:06:53.770966" elapsed="49.959028">Element 'xpath://div[@class='oxd-sidepanel-body']//ul//li[5]/a' did not appear in 10 seconds.</status>
+</kw>
+<kw name="click requirement" owner="resources">
+<status status="NOT RUN" start="2025-08-07T00:07:43.731701" elapsed="0.000222"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${Add_btn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-08-07T00:07:43.732885" elapsed="0.000167"/>
+</kw>
+<kw name="click add candidate" owner="resources">
+<status status="NOT RUN" start="2025-08-07T00:07:43.734528" elapsed="0.000178"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${firstname}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-08-07T00:07:43.735523" elapsed="0.000160"/>
+</kw>
+<kw name="Enter firstname" owner="resources">
+<arg>${fname}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.736647" elapsed="0.000195"/>
+</kw>
+<kw name="Enter middlename" owner="resources">
+<arg>${mname}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.737767" elapsed="0.000155"/>
+</kw>
+<kw name="Enter lastname" owner="resources">
+<arg>${lname}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.738814" elapsed="0.000155"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-08-07T00:07:43.739744" elapsed="0.000814"/>
+</kw>
+<kw name="Enter email" owner="resources">
+<arg>${emailval}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.742892" elapsed="0.000315"/>
+</kw>
+<kw name="Enter contact" owner="resources">
+<arg>${mobile}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.744732" elapsed="0.000210"/>
+</kw>
+<kw name="File Upload" owner="resources">
+<arg>${upload}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.746696" elapsed="0.000229"/>
+</kw>
+<kw name="Enter candidate keyword" owner="resources">
+<arg>${key}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.748095" elapsed="0.000244"/>
+</kw>
+<kw name="Date of application" owner="resources">
+<arg>${date}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.749395" elapsed="0.000184"/>
+</kw>
+<kw name="Enter text area" owner="resources">
+<arg>${text}</arg>
+<status status="NOT RUN" start="2025-08-07T00:07:43.750584" elapsed="0.000181"/>
+</kw>
+<kw name="Click save button" owner="resources">
+<status status="NOT RUN" start="2025-08-07T00:07:43.751718" elapsed="0.000226"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Logout application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-07T00:07:43.753644" elapsed="0.001076"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:06:24.605801" elapsed="79.149368">Element 'xpath://div[@class='oxd-sidepanel-body']//ul//li[5]/a' did not appear in 10 seconds.</status>
+</test>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>close browser</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-07T00:07:43.758861" elapsed="0.001172"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:06:18.766081" elapsed="84.994210"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="LoginTest" id="s1" pass="0" fail="1" skip="0">LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-07T00:06:24.597581" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\LoginTest.robot", line 0</msg>
+<msg time="2025-08-07T00:06:24.597923" level="ERROR">In source file:
+  File "C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\..\TestData\testdata.xlsx", line 0</msg>
+<msg time="2025-08-07T00:06:24.602662" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ImportError: Requirements (pandas, openpyxl) for XLSX support are not installed.
+    Use 'pip install -U robotframework-datadriver[XLS]' to install XLSX support.</msg>
+</errors>
+</robot>

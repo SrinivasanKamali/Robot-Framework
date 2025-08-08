@@ -1,0 +1,9 @@
+browser opened!!!!:https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+Entered user name:Admin
+Entered user name:admin123
+logged
+Clicked requirement
+clicked button
+added to candidate
+SAve button cliked
+Validation checked!!!

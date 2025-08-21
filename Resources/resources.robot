@@ -1,7 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
 Variables   ../PageObjects/login.py
-Variables  ../PageObjects/login.py
 
 *** Keywords ***
 Launch Application

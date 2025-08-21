@@ -1,5 +1,0 @@
-browser opened!!!!:https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
-Logged in Successfully!!!Successfully Added Candidate!!!browser opened!!!!:https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
-logged
-SAve button cliked
-Validation checked!!!

@@ -1,0 +1,55 @@
+==============================================================================
+TestCases                                                                     
+==============================================================================
+TestCases.Requirement Suite                                                   
+==============================================================================
+create log file
+TC001_Add Candidate with All Details                                  Login To Application
+3
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot:21
+    T:  TC001_Add Candidate with All Details    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot:25
+      ${i}    IN RANGE    2    ${end}    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot:25
+      ${i} = 2    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot:28
+      Append To File    ${log_file}    browser opened!!!!:${url}\n
+      |  ${log_file} = C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases/../TestData/log_steps.txt (str)
+      |  browser opened!!!!:${url}\n = browser opened!!!!:https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+ (str)
+______________________________________________________________________________
+Logout application
+| FAIL |
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'
+------------------------------------------------------------------------------
+TC002 Add Candidate without enterd Mandatory values                   Login To Application
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot:50
+    T:  TC002 Add Candidate without enterd Mandatory values    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot:52
+      Append To File    ${log_file}    browser opened!!!!:${url}\n
+      |  ${log_file} = C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases/../TestData/log_steps.txt (str)
+      |  browser opened!!!!:${url}\n = browser opened!!!!:https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+ (str)
+______________________________________________________________________________
+Logout application
+| FAIL |
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'
+------------------------------------------------------------------------------
+close browser
+TestCases.Requirement Suite                                           | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+TestCases                                                             | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\pabot_results\0\output.xml

@@ -1,168 +1,1357 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-07T00:06:18.756125" rpa="false" schemaversion="5">
-<suite id="s1" name="LoginTest" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\LoginTest.robot">
+<robot generator="Rebot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-13T19:38:15.766960" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases">
+<suite id="s1-s1" name="Requirement Suite" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot">
 <kw name="Log To Console" owner="BuiltIn" type="SETUP">
-<arg>browser open</arg>
+<arg>create log file</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-07T00:06:24.604735" elapsed="0.000699"/>
+<status status="PASS" start="2025-08-13T19:17:25.829148" elapsed="0.001847"/>
 </kw>
-<test id="s1-t1" name="Add Candidate Test" line="30">
+<test id="s1-s1-t1" name="TC001_Add Candidate with All Details" line="21">
 <kw name="Log To Console" owner="BuiltIn" type="SETUP">
 <arg>Login To Application</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-07T00:06:24.608302" elapsed="0.000548"/>
+<status status="PASS" start="2025-08-13T19:17:25.833205" elapsed="0.000670"/>
 </kw>
-<kw name="browser open" owner="resources">
+<kw name="Get Max Row" owner="data">
+<msg time="2025-08-13T19:17:25.853489" level="INFO">${total_row} = 2</msg>
+<var>${total_row}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<status status="PASS" start="2025-08-13T19:17:25.834351" elapsed="0.019446"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-13T19:17:25.855582" level="INFO">${end} = 3</msg>
+<var>${end}</var>
+<arg>${total_row} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.854498" elapsed="0.001246"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${end}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.856239" elapsed="0.000664"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="create log file" owner="resources">
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2025-08-13T19:17:25.859771" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.858854" elapsed="0.001216"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-08-13T19:17:25.861654" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.860470" elapsed="0.001486"/>
+</kw>
+<status status="PASS" start="2025-08-13T19:17:25.858152" elapsed="0.004078"/>
+</kw>
+<kw name="Launch Application" owner="resources">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-07T00:06:24.610925" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-08-13T19:17:25.864913" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-07T00:06:24.610476" elapsed="11.625849"/>
+<status status="PASS" start="2025-08-13T19:17:25.863945" elapsed="47.036944"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-07T00:06:36.238049" elapsed="12.068822"/>
+<status status="PASS" start="2025-08-13T19:18:12.901482" elapsed="1.806638"/>
 </kw>
 <arg>${url}</arg>
 <arg>${browser}</arg>
-<status status="PASS" start="2025-08-07T00:06:24.609486" elapsed="23.697738"/>
+<status status="PASS" start="2025-08-13T19:17:25.862684" elapsed="48.845690"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-08-07T00:06:53.309589" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-08-07T00:06:48.308080" elapsed="5.002007"/>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:18:14.710066" level="FAIL">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</msg>
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="FAIL" start="2025-08-13T19:18:14.708648" elapsed="0.001981">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
 </kw>
-<kw name="Enter user name" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-07T00:06:53.315011" level="INFO">Typing text 'name:username' into text field 'name:username'.</msg>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.711932" elapsed="0.000231"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.712694" elapsed="0.000227"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>user</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.713326" elapsed="0.000203"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>pass</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.713949" elapsed="0.000194"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${fname}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>fname</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.714540" elapsed="0.000176"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${mname}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>mname</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.715104" elapsed="0.000167"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${lname}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>lname</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.715653" elapsed="0.000175"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${emailval}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>email</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.716234" elapsed="0.000173"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${mobile}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>mobile</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.716896" elapsed="0.000222"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${key}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>key</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.717416" elapsed="0.000139"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${text}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>text</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.717924" elapsed="0.000204"/>
+</kw>
+<kw name="Perform Login" owner="resources">
 <arg>${user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-07T00:06:53.313422" elapsed="0.182257"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2025-08-07T00:06:53.311805" elapsed="0.184027"/>
-</kw>
-<kw name="Enter password" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-07T00:06:53.498562" level="INFO">Typing text 'name:password' into text field 'name:password'.</msg>
-<arg>${password}</arg>
 <arg>${pass}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-07T00:06:53.497079" elapsed="0.145084"/>
+<status status="NOT RUN" start="2025-08-13T19:18:14.718799" elapsed="0.000180"/>
 </kw>
-<arg>${password}</arg>
-<status status="PASS" start="2025-08-07T00:06:53.496368" elapsed="0.145946"/>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>Logged in Successfully!!!</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.719344" elapsed="0.000233"/>
 </kw>
-<kw name="click login" owner="resources">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-07T00:06:53.643300" level="INFO">Clicking button 'xpath://div[@class='orangehrm-login-form']//form//div[3]/button'.</msg>
-<arg>${login_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-07T00:06:53.643059" elapsed="0.126939"/>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${requirement_link}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.720041" elapsed="0.000158"/>
 </kw>
-<status status="PASS" start="2025-08-07T00:06:53.642718" elapsed="0.127651"/>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${firstname}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.720458" elapsed="0.000140"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${email}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.720870" elapsed="0.000133"/>
+</kw>
+<kw name="Fill the Candidate Information" owner="resources">
+<arg>${fname}</arg>
+<arg>${mname}</arg>
+<arg>${lname}</arg>
+<arg>${emailval}</arg>
+<arg>${mobile}</arg>
+<arg>${upload}</arg>
+<arg>${key}</arg>
+<arg>${text}</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.721380" elapsed="0.000146"/>
+</kw>
+<kw name="Save the candidate details" owner="resources">
+<status status="NOT RUN" start="2025-08-13T19:18:14.722262" elapsed="0.000217"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>Successfully Added Candidate!!!</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.722845" elapsed="0.000196"/>
+</kw>
+<var name="${i}">2</var>
+<status status="FAIL" start="2025-08-13T19:17:25.857776" elapsed="48.865569">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<value>${end}</value>
+<status status="FAIL" start="2025-08-13T19:17:25.857087" elapsed="48.866519">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</for>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Logout application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:18:14.724187" elapsed="0.001127"/>
+</kw>
+<status status="FAIL" start="2025-08-13T19:17:25.831890" elapsed="48.893702">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</test>
+<test id="s1-s1-t2" name="TC002 Add Candidate without enterd Mandatory values" line="50">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Login To Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:18:14.727363" elapsed="0.000474"/>
+</kw>
+<kw name="Launch Application" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:18:14.729489" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-13T19:18:14.728910" elapsed="44.670406"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-13T19:18:59.399755" elapsed="0.058344"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-08-13T19:18:14.728144" elapsed="44.730174"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:18:59.462250" level="FAIL">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</msg>
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="FAIL" start="2025-08-13T19:18:59.459150" elapsed="0.003422">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>2</arg>
+<arg>user</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:59.463295" elapsed="0.000168"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>2</arg>
+<arg>pass</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:59.463808" elapsed="0.000203"/>
+</kw>
+<kw name="Perform Login" owner="resources">
+<arg>${user}</arg>
+<arg>${pass}</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:59.464605" elapsed="0.000201"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>logged\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:59.465156" elapsed="0.000152"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<msg time="2025-08-07T00:07:43.635346" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-54.png"&gt;&lt;img src="selenium-screenshot-54.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-08-07T00:07:43.635961" level="FAIL">Element 'xpath://div[@class='oxd-sidepanel-body']//ul//li[5]/a' did not appear in 10 seconds.</msg>
 <arg>${requirement_link}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="FAIL" start="2025-08-07T00:06:53.770966" elapsed="49.959028">Element 'xpath://div[@class='oxd-sidepanel-body']//ul//li[5]/a' did not appear in 10 seconds.</status>
+<status status="NOT RUN" start="2025-08-13T19:18:59.465661" elapsed="0.000161"/>
 </kw>
-<kw name="click requirement" owner="resources">
-<status status="NOT RUN" start="2025-08-07T00:07:43.731701" elapsed="0.000222"/>
+<kw name="Save the candidate details" owner="resources">
+<status status="NOT RUN" start="2025-08-13T19:18:59.466196" elapsed="0.000179"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${Add_btn}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-08-07T00:07:43.732885" elapsed="0.000167"/>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>SAve button cliked\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:59.466678" elapsed="0.000151"/>
 </kw>
-<kw name="click add candidate" owner="resources">
-<status status="NOT RUN" start="2025-08-07T00:07:43.734528" elapsed="0.000178"/>
+<kw name="Verify the mandatory field errors" owner="resources">
+<status status="NOT RUN" start="2025-08-13T19:18:59.467369" elapsed="0.000198"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${firstname}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-08-07T00:07:43.735523" elapsed="0.000160"/>
-</kw>
-<kw name="Enter firstname" owner="resources">
-<arg>${fname}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.736647" elapsed="0.000195"/>
-</kw>
-<kw name="Enter middlename" owner="resources">
-<arg>${mname}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.737767" elapsed="0.000155"/>
-</kw>
-<kw name="Enter lastname" owner="resources">
-<arg>${lname}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.738814" elapsed="0.000155"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-08-07T00:07:43.739744" elapsed="0.000814"/>
-</kw>
-<kw name="Enter email" owner="resources">
-<arg>${emailval}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.742892" elapsed="0.000315"/>
-</kw>
-<kw name="Enter contact" owner="resources">
-<arg>${mobile}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.744732" elapsed="0.000210"/>
-</kw>
-<kw name="File Upload" owner="resources">
-<arg>${upload}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.746696" elapsed="0.000229"/>
-</kw>
-<kw name="Enter candidate keyword" owner="resources">
-<arg>${key}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.748095" elapsed="0.000244"/>
-</kw>
-<kw name="Date of application" owner="resources">
-<arg>${date}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.749395" elapsed="0.000184"/>
-</kw>
-<kw name="Enter text area" owner="resources">
-<arg>${text}</arg>
-<status status="NOT RUN" start="2025-08-07T00:07:43.750584" elapsed="0.000181"/>
-</kw>
-<kw name="Click save button" owner="resources">
-<status status="NOT RUN" start="2025-08-07T00:07:43.751718" elapsed="0.000226"/>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>Validation checked!!!</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:59.467880" elapsed="0.000149"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
 <arg>Logout application</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-07T00:07:43.753644" elapsed="0.001076"/>
+<status status="PASS" start="2025-08-13T19:18:59.468697" elapsed="0.000543"/>
 </kw>
-<status status="FAIL" start="2025-08-07T00:06:24.605801" elapsed="79.149368">Element 'xpath://div[@class='oxd-sidepanel-body']//ul//li[5]/a' did not appear in 10 seconds.</status>
+<status status="FAIL" start="2025-08-13T19:18:14.726445" elapsed="44.743028">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
 </test>
 <kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
 <arg>close browser</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-07T00:07:43.758861" elapsed="0.001172"/>
+<status status="PASS" start="2025-08-13T19:18:59.471705" elapsed="0.000754"/>
 </kw>
-<status status="FAIL" start="2025-08-07T00:06:18.766081" elapsed="84.994210"/>
+<status status="FAIL" start="2025-08-13T19:17:19.058000" elapsed="93.640000"/>
+</suite>
+<suite id="s1-s2" name="Timesheet Suite" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>opening the browser</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.790626" elapsed="0.001867"/>
+</kw>
+<test id="s1-s2-t1" name="TC001_Find total number records and log Timesheet period data" line="23">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Login To Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.796770" elapsed="0.001086"/>
+</kw>
+<kw name="Get Max Row" owner="data">
+<msg time="2025-08-13T19:17:25.831885" level="INFO">${total_row} = 2</msg>
+<var>${total_row}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<status status="PASS" start="2025-08-13T19:17:25.798566" elapsed="0.033554"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-13T19:17:25.833476" level="INFO">${end} = 3</msg>
+<var>${end}</var>
+<arg>${total_row} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.832607" elapsed="0.000986"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${end}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.834510" elapsed="0.000714"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Launch Application" owner="timesheet">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:17:25.840600" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.839750" elapsed="46.089659"/>
+</kw>
+<arg>'${url}' != '' and '${browser}' != ''</arg>
+<arg>Open Browser</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.838132" elapsed="46.091969"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-13T19:18:11.930964" elapsed="0.304398"/>
+</kw>
+<arg>${url}</arg>
+<arg>${i}</arg>
+<status status="PASS" start="2025-08-13T19:17:25.837037" elapsed="46.399226"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="create log file" owner="timesheet">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:07.541967" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2025-08-13T19:18:12.243213" elapsed="55.300014"/>
+</kw>
+<arg>remove file</arg>
+<arg>${log_file}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-13T19:18:12.241714" elapsed="55.302271"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-13T19:19:07.546944" level="INFO">${log_file} = C:/Users/srini.SRINIKAMALI/PycharmProjects/Robot Framework-Automation/TestCases/log_steps.txt</msg>
+<var>${log_file}</var>
+<arg>C:/Users/srini.SRINIKAMALI/PycharmProjects/Robot Framework-Automation/TestCases/log_steps.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-13T19:19:07.545039" elapsed="0.002106"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:07.551524" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-08-13T19:19:07.549212" elapsed="0.002636"/>
+</kw>
+<arg>'${log_file}' != ''</arg>
+<arg>Create File</arg>
+<arg>${log_file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-13T19:19:07.547798" elapsed="0.004403"/>
+</kw>
+<status status="PASS" start="2025-08-13T19:18:12.239946" elapsed="55.312667"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:07.556145" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:07.553195" elapsed="0.003450"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-13T19:19:07.557942" elapsed="0.005607"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-13T19:19:07.564257" elapsed="11.527163"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<msg time="2025-08-13T19:19:19.149712" level="INFO">${user} = Admin</msg>
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>user</arg>
+<status status="PASS" start="2025-08-13T19:19:19.091814" elapsed="0.058093"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<msg time="2025-08-13T19:19:19.173539" level="INFO">${pass} = admin123</msg>
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>pass</arg>
+<status status="PASS" start="2025-08-13T19:19:19.150576" elapsed="0.023071"/>
+</kw>
+<kw name="Perform Login" owner="timesheet">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:19.175983" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
+<arg>${username}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:19.175423" elapsed="0.453353"/>
+</kw>
+<arg>input text</arg>
+<arg>${username}</arg>
+<arg>${user}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-08-13T19:19:19.174966" elapsed="0.454325"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:19.631874" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
+<arg>${password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:19.630772" elapsed="0.224739"/>
+</kw>
+<arg>input text</arg>
+<arg>${password}</arg>
+<arg>${pass}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-08-13T19:19:19.629889" elapsed="0.225886"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:19.870690" level="INFO">Clicking button 'xpath://button[text()=' Login ']'.</msg>
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:19.870124" elapsed="0.235358"/>
+</kw>
+<arg>click button</arg>
+<arg>${login_btn}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-08-13T19:19:19.869516" elapsed="0.236262"/>
+</kw>
+<arg>${user}</arg>
+<arg>${pass}</arg>
+<status status="PASS" start="2025-08-13T19:19:19.174102" elapsed="0.931981"/>
+</kw>
+<kw name="Timesheet entry record check" owner="timesheet">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:49.536284" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/login.png"&gt;&lt;img src="../results/login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>../results/login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-13T19:19:20.107265" elapsed="29.429350"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:49.537743" level="INFO">Clicking link 'xpath://span[text()='Time']//parent::a'.</msg>
+<arg>${time_btn}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:49.537134" elapsed="1.674448"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${timesheet_count}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-13T19:19:51.212062" elapsed="1.098014"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.323271" level="INFO">${get_timesheet} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.38")&gt;, &lt;selenium.webdriv...</msg>
+<var>${get_timesheet}</var>
+<arg>${timesheet_count}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.310370" elapsed="0.012988"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.385817" level="INFO">${text} = firstNameTest1 middleNameTest1 lastNameTest1</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.324273" elapsed="0.061665"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.386325" elapsed="0.000630"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.409609" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.387227" elapsed="0.022785"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.38")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.323923" elapsed="0.086372"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.427754" level="INFO">${text} = 2025-11-08 - 2025-17-08</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.411200" elapsed="0.016681"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.428214" elapsed="0.000590"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.430283" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.429093" elapsed="0.001551"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.39")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.410825" elapsed="0.020154"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.450158" level="INFO">${text} = View</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.431792" elapsed="0.018493"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.450673" elapsed="0.001164"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.453553" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.452183" elapsed="0.001580"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.40")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.431424" elapsed="0.022497"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.472078" level="INFO">${text} = firstNameTest1 middleNameTest1 lastNameTest1</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.454601" elapsed="0.017648"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.472718" elapsed="0.000853"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.475296" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.473996" elapsed="0.001519"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.41")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.454262" elapsed="0.021436"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.491396" level="INFO">${text} = 2023-16-01 - 2023-22-01</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.476426" elapsed="0.015055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.491841" elapsed="0.000553"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.493864" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.492668" elapsed="0.001439"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.42")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.476085" elapsed="0.018187"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.508668" level="INFO">${text} = View</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.494921" elapsed="0.013823"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.508985" elapsed="0.000560"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.511058" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.509819" elapsed="0.001466"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.43")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.494602" elapsed="0.016833"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.528449" level="INFO">${text} = firstNameTest1 middleNameTest1 lastNameTest1</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.512274" elapsed="0.016296"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.528900" elapsed="0.000626"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.531145" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.529865" elapsed="0.001530"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.44")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.511913" elapsed="0.019736"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.547064" level="INFO">${text} = 2022-15-08 - 2022-21-08</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.532518" elapsed="0.014653"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.547499" elapsed="0.000537"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.549536" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.548321" elapsed="0.001431"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.45")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.532144" elapsed="0.017759"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.564677" level="INFO">${text} = View</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.550574" elapsed="0.014217"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.565120" elapsed="0.000537"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.567487" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.565927" elapsed="0.001862"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.46")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.550248" elapsed="0.017786"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.586370" level="INFO">${text} = firstNameTest1 middleNameTest1 lastNameTest1</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.569026" elapsed="0.017448"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.586802" elapsed="0.000541"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.588842" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.587624" elapsed="0.001463"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.47")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.568611" elapsed="0.020627"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.603629" level="INFO">${text} = 2020-14-09 - 2020-20-09</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.590061" elapsed="0.013675"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.604076" elapsed="0.000535"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.606112" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.604878" elapsed="0.001426"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.48")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.589732" elapsed="0.016736"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.622293" level="INFO">${text} = View</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.607322" elapsed="0.015068"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.622747" elapsed="0.000532"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:19:52.624761" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\timesheet_periods.txt&lt;/a&gt;'.</msg>
+<arg>${OUTPUT_FILE}</arg>
+<arg>${text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2025-08-13T19:19:52.623523" elapsed="0.001468"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="546e1e72f94dc49c8d8bec10f06272ed", element="f.95D4C088B5395F628F9C56A26357B507.d.37682E28F489FD75D5BBC2346FE7D752.e.49")&gt;</var>
+<status status="PASS" start="2025-08-13T19:19:52.606980" elapsed="0.018195"/>
+</iter>
+<var>${el}</var>
+<value>@{get_timesheet}</value>
+<status status="PASS" start="2025-08-13T19:19:52.323526" elapsed="0.301839"/>
+</for>
+<status status="PASS" start="2025-08-13T19:19:20.106566" elapsed="32.519100"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-08-13T19:18:12.238929" elapsed="100.386888"/>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<value>${end}</value>
+<status status="PASS" start="2025-08-13T19:18:12.237264" elapsed="100.388728"/>
+</for>
+<var name="${i}">chrome</var>
+<status status="PASS" start="2025-08-13T19:17:25.836448" elapsed="146.789754"/>
+</iter>
+<iter>
+<kw name="Launch Application" owner="timesheet">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:19:52.629177" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-08-13T19:19:59.354325" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_139_WINDOWS)</msg>
+<msg time="2025-08-13T19:19:59.355070" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+<msg time="2025-08-13T19:24:58.273659" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)")': /session/64cc4af79df4bedb7a0019feaf1697ac/screenshot</msg>
+<msg time="2025-08-13T19:26:58.283454" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)")': /session/64cc4af79df4bedb7a0019feaf1697ac/screenshot</msg>
+<msg time="2025-08-13T19:27:47.652088" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7976ae785+22117]
+	(No symbol) [0x0x7ff7975fee00]
+	(No symbol) [0x0x7ff7973ccdb0]
+	(No symbol) [0x0x7ff79740dcc6]
+	(No symbol) [0x0x7ff79740e9b3]
+	(No symbol) [0x0x7ff79750907d]
+	(No symbol) [0x0x7ff797515fe8]
+	GetHandleVerifier [0x0x7ff79778f277+942423]
+	GetHandleVerifier [0x0x7ff797798221+979201]
+	(No symbol) [0x0x7ff79760c3b1]
+	(No symbol) [0x0x7ff797604d64]
+	(No symbol) [0x0x7ff797604eb3]
+	(No symbol) [0x0x7ff7975f7016]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</msg>
+<msg time="2025-08-13T19:27:51.494570" level="FAIL">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-08-13T19:19:52.628611" elapsed="491.579310">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)</status>
+</kw>
+<arg>'${url}' != '' and '${browser}' != ''</arg>
+<arg>Open Browser</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-08-13T19:19:52.627879" elapsed="492.479028">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-08-13T19:28:05.107312" elapsed="0.000192"/>
+</kw>
+<arg>${url}</arg>
+<arg>${i}</arg>
+<status status="FAIL" start="2025-08-13T19:19:52.627077" elapsed="492.656821">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)</status>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="create log file" owner="timesheet">
+<status status="NOT RUN" start="2025-08-13T19:28:05.320956" elapsed="0.000224"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:28:05.321447" elapsed="0.000144"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" start="2025-08-13T19:28:05.321836" elapsed="0.000110"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-13T19:28:05.322211" elapsed="0.000110"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>user</arg>
+<status status="NOT RUN" start="2025-08-13T19:28:05.322499" elapsed="0.000099"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>pass</arg>
+<status status="NOT RUN" start="2025-08-13T19:28:05.367681" elapsed="0.000203"/>
+</kw>
+<kw name="Perform Login" owner="timesheet">
+<arg>${user}</arg>
+<arg>${pass}</arg>
+<status status="NOT RUN" start="2025-08-13T19:28:05.368223" elapsed="0.000145"/>
+</kw>
+<kw name="Timesheet entry record check" owner="timesheet">
+<status status="NOT RUN" start="2025-08-13T19:28:05.368669" elapsed="0.000103"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2025-08-13T19:28:05.284400" elapsed="0.084448"/>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<value>${end}</value>
+<status status="NOT RUN" start="2025-08-13T19:28:05.284123" elapsed="0.084823"/>
+</for>
+<var name="${i}">edge</var>
+<status status="FAIL" start="2025-08-13T19:19:52.626665" elapsed="492.742454">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)</status>
+</iter>
+<var>${i}</var>
+<value>@{Browsers}</value>
+<status status="FAIL" start="2025-08-13T19:17:25.835523" elapsed="639.533733">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)</status>
+</for>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Logout application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:28:06.150872" elapsed="0.103143"/>
+</kw>
+<tag>regression</tag>
+<status status="FAIL" start="2025-08-13T19:17:25.793546" elapsed="640.549254">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)</status>
+</test>
+<test id="s1-s2-t2" name="TC002 Attandence punch IN and punch Out" line="45">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Login To Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.001398" elapsed="0.000483"/>
+</kw>
+<kw name="Get Max Row" owner="data">
+<msg time="2025-08-13T19:28:09.483439" level="INFO">${total_row} = 2</msg>
+<var>${total_row}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<status status="PASS" start="2025-08-13T19:28:09.021148" elapsed="0.462369"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-13T19:28:09.669884" level="INFO">${end} = 3</msg>
+<var>${end}</var>
+<arg>${total_row} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.483925" elapsed="0.186069"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${end}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.670258" elapsed="0.000486"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="create log file" owner="timesheet">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2025-08-13T19:28:09.760670" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.759552" elapsed="0.001344"/>
+</kw>
+<arg>remove file</arg>
+<arg>${log_file}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.759003" elapsed="0.002157"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-13T19:28:09.761840" level="INFO">${log_file} = C:/Users/srini.SRINIKAMALI/PycharmProjects/Robot Framework-Automation/TestCases/log_steps.txt</msg>
+<var>${log_file}</var>
+<arg>C:/Users/srini.SRINIKAMALI/PycharmProjects/Robot Framework-Automation/TestCases/log_steps.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.761460" elapsed="0.000436"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-08-13T19:28:09.763299" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.762523" elapsed="0.000889"/>
+</kw>
+<arg>'${log_file}' != ''</arg>
+<arg>Create File</arg>
+<arg>${log_file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-13T19:28:09.762112" elapsed="0.001429"/>
+</kw>
+<status status="PASS" start="2025-08-13T19:28:09.735773" elapsed="0.027894"/>
+</kw>
+<kw name="Launch Application" owner="timesheet">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:28:09.765445" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-08-13T19:35:11.256572" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7976ae785+22117]
+	(No symbol) [0x0x7ff7975fee00]
+	(No symbol) [0x0x7ff7973ccdb0]
+	(No symbol) [0x0x7ff79740d573]
+	(No symbol) [0x0x7ff79743a6b2]
+	(No symbol) [0x0x7ff7973e5c1b]
+	(No symbol) [0x0x7ff7974372a9]
+	(No symbol) [0x0x7ff7974369ba]
+	(No symbol) [0x0x7ff7973a2c75]
+	(No symbol) [0x0x7ff79750907d]
+	(No symbol) [0x0x7ff797515fe8]
+	GetHandleVerifier [0x0x7ff79778f277+942423]
+	GetHandleVerifier [0x0x7ff797798221+979201]
+	(No symbol) [0x0x7ff79760c3b1]
+	(No symbol) [0x0x7ff7973a17a7]
+	GetHandleVerifier [0x0x7ff7978ea6e8+2364872]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</msg>
+<msg time="2025-08-13T19:35:11.258259" level="FAIL">SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-08-13T19:28:09.765009" elapsed="460.507321">SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</status>
+</kw>
+<arg>'${url}' != '' and '${browser}' != ''</arg>
+<arg>Open Browser</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-08-13T19:28:09.764519" elapsed="460.509918">SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-08-13T19:35:50.275415" elapsed="0.000495"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="FAIL" start="2025-08-13T19:28:09.763905" elapsed="460.512683">SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</status>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:35:50.277421" elapsed="0.000341"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" start="2025-08-13T19:35:50.278308" elapsed="0.000287"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-13T19:35:50.279108" elapsed="0.000279"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet_name}</arg>
+<arg>${i}</arg>
+<arg>user</arg>
+<status status="NOT RUN" start="2025-08-13T19:35:50.279911" elapsed="0.000451"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet_name}</arg>
+<arg>${i}</arg>
+<arg>pass</arg>
+<status status="NOT RUN" start="2025-08-13T19:35:50.280997" elapsed="0.000273"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${date}</var>
+<arg>${file}</arg>
+<arg>${sheet_name}</arg>
+<arg>${i}</arg>
+<arg>date</arg>
+<status status="NOT RUN" start="2025-08-13T19:35:50.281795" elapsed="0.000279"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${intime}</var>
+<arg>${file}</arg>
+<arg>${sheet_name}</arg>
+<arg>${i}</arg>
+<arg>intime</arg>
+<status status="NOT RUN" start="2025-08-13T19:35:50.282568" elapsed="0.000247"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${text}</var>
+<arg>${file}</arg>
+<arg>${sheet_name}</arg>
+<arg>${i}</arg>
+<arg>text</arg>
+<status status="NOT RUN" start="2025-08-13T19:35:50.283320" elapsed="0.000253"/>
+</kw>
+<kw name="Perform Login" owner="timesheet">
+<arg>${user}</arg>
+<arg>${pass}</arg>
+<status status="NOT RUN" start="2025-08-13T19:35:50.284351" elapsed="0.000361"/>
+</kw>
+<kw name="TimeEntry punch IN" owner="timesheet">
+<arg>${date}</arg>
+<arg>${intime}</arg>
+<arg>${text}</arg>
+<status status="NOT RUN" start="2025-08-13T19:35:50.285700" elapsed="0.000302"/>
+</kw>
+<var name="${i}">2</var>
+<status status="FAIL" start="2025-08-13T19:28:09.735345" elapsed="460.551023">SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</status>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<value>${end}</value>
+<status status="FAIL" start="2025-08-13T19:28:09.670896" elapsed="460.616329">SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</status>
+</for>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Logout application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:35:50.289291" elapsed="0.001469"/>
+</kw>
+<tag>sanity</tag>
+<status status="FAIL" start="2025-08-13T19:28:08.029873" elapsed="462.261557">SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</status>
+</test>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>close browser action</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:35:51.592441" elapsed="0.001047"/>
+</kw>
+<status status="FAIL" start="2025-08-13T19:17:19.058338" elapsed="1112.535555"/>
+</suite>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 2 executions.</doc>
+<status status="FAIL" start="2025-08-13T19:17:19.002000" elapsed="1114.013000"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">regression</stat>
+<stat pass="0" fail="1" skip="0">sanity</stat>
 </tag>
 <suite>
-<stat name="LoginTest" id="s1" pass="0" fail="1" skip="0">LoginTest</stat>
+<stat name="TestCases" id="s1" pass="0" fail="4" skip="0">TestCases</stat>
+<stat name="Requirement Suite" id="s1-s1" pass="0" fail="2" skip="0">TestCases.Requirement Suite</stat>
+<stat name="Timesheet Suite" id="s1-s2" pass="0" fail="2" skip="0">TestCases.Timesheet Suite</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-08-07T00:06:24.597581" level="ERROR">[ DataDriver ] Error in robot file:
-  File "C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\LoginTest.robot", line 0</msg>
-<msg time="2025-08-07T00:06:24.597923" level="ERROR">In source file:
-  File "C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\..\TestData\testdata.xlsx", line 0</msg>
-<msg time="2025-08-07T00:06:24.602662" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ImportError: Requirements (pandas, openpyxl) for XLSX support are not installed.
-    Use 'pip install -U robotframework-datadriver[XLS]' to install XLSX support.</msg>
+<msg time="2025-08-13T19:19:59.354325" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_139_WINDOWS)</msg>
+<msg time="2025-08-13T19:19:59.355070" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+<msg time="2025-08-13T19:24:58.273659" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)")': /session/64cc4af79df4bedb7a0019feaf1697ac/screenshot</msg>
+<msg time="2025-08-13T19:26:58.283454" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)")': /session/64cc4af79df4bedb7a0019feaf1697ac/screenshot</msg>
+<msg time="2025-08-13T19:27:47.652088" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7976ae785+22117]
+	(No symbol) [0x0x7ff7975fee00]
+	(No symbol) [0x0x7ff7973ccdb0]
+	(No symbol) [0x0x7ff79740dcc6]
+	(No symbol) [0x0x7ff79740e9b3]
+	(No symbol) [0x0x7ff79750907d]
+	(No symbol) [0x0x7ff797515fe8]
+	GetHandleVerifier [0x0x7ff79778f277+942423]
+	GetHandleVerifier [0x0x7ff797798221+979201]
+	(No symbol) [0x0x7ff79760c3b1]
+	(No symbol) [0x0x7ff797604d64]
+	(No symbol) [0x0x7ff797604eb3]
+	(No symbol) [0x0x7ff7975f7016]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</msg>
+<msg time="2025-08-13T19:35:11.256572" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7976ae785+22117]
+	(No symbol) [0x0x7ff7975fee00]
+	(No symbol) [0x0x7ff7973ccdb0]
+	(No symbol) [0x0x7ff79740d573]
+	(No symbol) [0x0x7ff79743a6b2]
+	(No symbol) [0x0x7ff7973e5c1b]
+	(No symbol) [0x0x7ff7974372a9]
+	(No symbol) [0x0x7ff7974369ba]
+	(No symbol) [0x0x7ff7973a2c75]
+	(No symbol) [0x0x7ff79750907d]
+	(No symbol) [0x0x7ff797515fe8]
+	GetHandleVerifier [0x0x7ff79778f277+942423]
+	GetHandleVerifier [0x0x7ff797798221+979201]
+	(No symbol) [0x0x7ff79760c3b1]
+	(No symbol) [0x0x7ff7973a17a7]
+	GetHandleVerifier [0x0x7ff7978ea6e8+2364872]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+</msg>
 </errors>
 </robot>

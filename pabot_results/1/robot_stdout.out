@@ -1,0 +1,118 @@
+==============================================================================
+TestCases                                                                     
+==============================================================================
+TestCases.Timesheet Suite                                                     
+==============================================================================
+opening the browser
+TC001_Find total number records and log Timesheet period data         Login To Application
+3
+firstNameTest1 middleNameTest1 lastNameTest1
+2025-11-08 - 2025-17-08
+View
+firstNameTest1 middleNameTest1 lastNameTest1
+2023-16-01 - 2023-22-01
+View
+firstNameTest1 middleNameTest1 lastNameTest1
+2022-15-08 - 2022-21-08
+View
+firstNameTest1 middleNameTest1 lastNameTest1
+2020-14-09 - 2020-20-09
+View
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:23
+    T:  TC001_Find total number records and log Timesheet period data    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:29
+      ${i}    IN    @{Browsers}    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:29
+      ${i} = edge    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:30
+      Launch Application    ${url}    ${i}
+      |  ${url} = https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (str)
+      |  ${i} = <Unable to define variable value>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\Resources\timesheet.robot:9
+      Run Keyword If    '${url}' != '' and '${browser}' != ''    Open Browser    ${url}    ${browser}
+      |  '${url}' != '' and '${browser}' != '' = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login' != '' and 'edge' != '' (str)
+      |  ${url} = https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (str)
+      |  ${browser} = edge (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\Resources\timesheet.robot:9
+      Open Browser    ${url}    ${browser}
+      |  ${url} = https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (str)
+      |  ${browser} = edge (str)
+______________________________________________________________________________
+Logout application
+| FAIL |
+ReadTimeoutError: HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)
+------------------------------------------------------------------------------
+TC002 Attandence punch IN and punch Out                               Login To Application
+3
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:45
+    T:  TC002 Attandence punch IN and punch Out    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:50
+      ${i}    IN RANGE    2    ${end}    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:50
+      ${i} = 2    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot:52
+      Launch Application    ${url}    ${browser}
+      |  ${url} = https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (str)
+      |  ${browser} = chrome (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\Resources\timesheet.robot:9
+      Run Keyword If    '${url}' != '' and '${browser}' != ''    Open Browser    ${url}    ${browser}
+      |  '${url}' != '' and '${browser}' != '' = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login' != '' and 'chrome' != '' (str)
+      |  ${url} = https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (str)
+      |  ${browser} = chrome (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\Resources\timesheet.robot:9
+      Open Browser    ${url}    ${browser}
+      |  ${url} = https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (str)
+      |  ${browser} = chrome (str)
+______________________________________________________________________________
+Logout application
+| FAIL |
+SessionNotCreatedException: Message: session not created
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff694cfe415+77285]
+	GetHandleVerifier [0x0x7ff694cfe470+77376]
+	(No symbol) [0x0x7ff694ac989c]
+	(No symbol) [0x0x7ff694abab71]
+	(No symbol) [0x0x7ff694b0d0c2]
+	(No symbol) [0x0x7ff694b06e6b]
+	(No symbol) [0x0x7ff694b0278e]
+	(No symbol) [0x0x7ff694b5602e]
+	(No symbol) [0x0x7ff694b557c0]
+	(No symbol) [0x0x7ff694b483e3]
+	(No symbol) [0x0x7ff694b11521]
+	(No symbol) [0x0x7ff694b122b3]
+	GetHandleVerifier [0x0x7ff694fe1efd+3107021]
+	GetHandleVerifier [0x0x7ff694fdc29d+3083373]
+	GetHandleVerifier [0x0x7ff694ffbedd+3213485]
+	GetHandleVerifier [0x0x7ff694d1884e+184862]
+	GetHandleVerifier [0x0x7ff694d2055f+216879]
+	GetHandleVerifier [0x0x7ff694d07084+113236]
+	GetHandleVerifier [0x0x7ff694d07239+113673]
+	GetHandleVerifier [0x0x7ff694cee298+11368]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+------------------------------------------------------------------------------
+close browser action
+TestCases.Timesheet Suite                                             | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+TestCases                                                             | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\pabot_results\1\output.xml

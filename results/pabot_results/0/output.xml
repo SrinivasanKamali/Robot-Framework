@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-12T19:30:23.728134" rpa="false" schemaversion="5">
+<suite id="s1" name="Timesheet Suite" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>create log file</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-12T19:30:24.649380" elapsed="0.000617"/>
+</kw>
+<test id="s1-t1" name="TC002 Attandence funch in and fun out" line="40">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Login To Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-12T19:30:24.651349" elapsed="0.000493"/>
+</kw>
+<kw name="Get Max Row" owner="data">
+<msg time="2025-08-12T19:30:24.662859" level="INFO">${total_row} = 2</msg>
+<var>${total_row}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<status status="PASS" start="2025-08-12T19:30:24.652126" elapsed="0.010849"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-12T19:30:24.663998" level="INFO">${end} = 3</msg>
+<var>${end}</var>
+<arg>${total_row} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-12T19:30:24.663328" elapsed="0.000760"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${total_row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-12T19:30:24.664378" elapsed="0.000526"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="create log file" owner="timesheet">
+<status status="NOT RUN" start="2025-08-12T19:30:24.666206" elapsed="0.000163"/>
+</kw>
+<kw name="Launch Application" owner="timesheet">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="NOT RUN" start="2025-08-12T19:30:24.666710" elapsed="0.000152"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-12T19:30:24.667116" elapsed="0.000131"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" start="2025-08-12T19:30:24.667525" elapsed="0.000133"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-12T19:30:24.667905" elapsed="0.000128"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>user</arg>
+<status status="NOT RUN" start="2025-08-12T19:30:24.668279" elapsed="0.000129"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>pass</arg>
+<status status="NOT RUN" start="2025-08-12T19:30:24.668660" elapsed="0.000128"/>
+</kw>
+<kw name="Perform Login" owner="timesheet">
+<arg>${user}</arg>
+<arg>${pass}</arg>
+<status status="NOT RUN" start="2025-08-12T19:30:24.669144" elapsed="0.000218"/>
+</kw>
+<kw name="TimeEntry punch IN" owner="timesheet">
+<arg>${datevalue}</arg>
+<arg>${intimevalue}</arg>
+<arg>${textvalue}</arg>
+<status status="NOT RUN" start="2025-08-12T19:30:24.669752" elapsed="0.000148"/>
+</kw>
+<kw name="TimeEntry punch OUT" owner="timesheet">
+<arg>${datevalue}</arg>
+<arg>${outtimevalue}</arg>
+<arg>${textvalue}</arg>
+<status status="NOT RUN" start="2025-08-12T19:30:24.670247" elapsed="0.000157"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2025-08-12T19:30:24.665784" elapsed="0.004782"/>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<value>${total_row}</value>
+<status status="NOT RUN" start="2025-08-12T19:30:24.665111" elapsed="0.005615"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Logout application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-12T19:30:24.671212" elapsed="0.000453"/>
+</kw>
+<tag>sanity</tag>
+<status status="PASS" start="2025-08-12T19:30:24.650356" elapsed="0.021469"/>
+</test>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>close browser</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-12T19:30:24.672985" elapsed="0.000466"/>
+</kw>
+<status status="PASS" start="2025-08-12T19:30:23.803864" elapsed="0.869741"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">sanity</stat>
+</tag>
+<suite>
+<stat name="Timesheet Suite" id="s1" pass="1" fail="0" skip="0">Timesheet Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

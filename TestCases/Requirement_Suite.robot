@@ -14,17 +14,17 @@ ${url}          https://opensource-demo.orangehrmlive.com/web/index.php/auth/log
 ${browser}      chrome
 ${file}         ${CURDIR}/../TestData/testdata.xlsx
 ${sheet}        Sheet1
-${upload}       ${CURDIR}/Srinivasan_Govindhan_Resume.pdf
-${log_file}     ${CURDIR}/log_steps.txt
+${upload}       ${CURDIR}/../TestData/Srinivasan_Govindhan_Resume.pdf
+${log_file}     ${CURDIR}/../TestData/log_steps.txt
 
 *** Test Cases ***
 TC001_Add Candidate with All Details
-    ${total_row}=   data.Get Max Row  ${file}     ${sheet}
+    ${total_row}=   data.Get Max Row  ${file}   ${sheet}
     ${end}=     Evaluate    ${total_row} + 1
     log to console  ${end}
     FOR     ${i}  IN RANGE  2   ${end}
     create log file
-    Launch Application    ${url}  ${browser}
+    Launch Application  ${url}  ${browser}
     Append To File  ${log_file}   browser opened!!!!:${url}\n
     set selenium implicit wait  10s
     Wait Until Element is visible    ${username}

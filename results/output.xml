@@ -1,1120 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-08T22:57:30.261501" rpa="false" schemaversion="5">
-<suite id="s1" name="Requirement Suite" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-21T23:01:48.803007" rpa="false" schemaversion="5">
+<suite id="s1" name="Timesheet Suite" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Timesheet_Suite.robot">
 <kw name="Log To Console" owner="BuiltIn" type="SETUP">
-<arg>create log file</arg>
+<arg>opening the browser</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-08T22:57:38.772353" elapsed="0.000676"/>
+<status status="PASS" start="2025-08-21T23:03:42.716745" elapsed="0.176297"/>
 </kw>
-<test id="s1-t1" name="TC001_Add Candidate with All Details" line="21">
+<test id="s1-t1" name="TC003 Find The Employee Attadence Details" line="76">
 <kw name="Log To Console" owner="BuiltIn" type="SETUP">
 <arg>Login To Application</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-08T22:57:38.774219" elapsed="0.000566"/>
+<status status="PASS" start="2025-08-21T23:03:42.894723" elapsed="0.000605"/>
 </kw>
-<kw name="Get Max Row" owner="data">
-<msg time="2025-08-08T22:57:38.783050" level="INFO">${total_row} = 4</msg>
+<kw name="Get Total Rows" owner="testdata_pandas">
+<msg time="2025-08-21T23:03:52.038196" level="INFO">${total_row} = 1</msg>
 <var>${total_row}</var>
 <arg>${file}</arg>
 <arg>${sheet}</arg>
-<status status="PASS" start="2025-08-08T22:57:38.775310" elapsed="0.007791"/>
+<status status="PASS" start="2025-08-21T23:03:42.895944" elapsed="9.142464"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${total_row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-21T23:03:52.039601" elapsed="0.001245"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-08-08T22:57:38.783832" level="INFO">${end} = 5</msg>
+<msg time="2025-08-21T23:03:52.043185" level="INFO">${end} = 2</msg>
 <var>${end}</var>
 <arg>${total_row} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-08-08T22:57:38.783550" elapsed="0.000317"/>
+<status status="PASS" start="2025-08-21T23:03:52.042061" elapsed="0.001287"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${end}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-08T22:57:38.784384" elapsed="0.000477"/>
+<status status="PASS" start="2025-08-21T23:03:52.044315" elapsed="0.001210"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
-<kw name="create log file" owner="resources">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-21T23:03:52.049517" elapsed="0.001422"/>
+</kw>
+<kw name="create log file" owner="timesheet">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Remove File" owner="OperatingSystem">
-<msg time="2025-08-08T22:57:38.786899" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
+<msg time="2025-08-21T23:03:52.056005" level="INFO" html="true">File '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;' does not exist.</msg>
 <arg>${log_file}</arg>
 <doc>Removes a file with the given path.</doc>
-<status status="PASS" start="2025-08-08T22:57:38.786309" elapsed="0.000711"/>
+<status status="PASS" start="2025-08-21T23:03:52.054714" elapsed="0.001612"/>
 </kw>
+<arg>remove file</arg>
+<arg>${log_file}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-21T23:03:52.054013" elapsed="0.002654"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-21T23:03:52.058614" level="INFO">${log_file} = C:/Users/srini.SRINIKAMALI/PycharmProjects/Robot Framework-Automation/TestCases/log_steps.txt</msg>
+<var>${log_file}</var>
+<arg>C:/Users/srini.SRINIKAMALI/PycharmProjects/Robot Framework-Automation/TestCases/log_steps.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-21T23:03:52.057470" elapsed="0.001457"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-08-08T22:57:38.787954" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
+<msg time="2025-08-21T23:03:52.094859" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
 <arg>${log_file}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-08-08T22:57:38.787215" elapsed="0.000827"/>
+<status status="PASS" start="2025-08-21T23:03:52.062961" elapsed="0.032061"/>
 </kw>
-<status status="PASS" start="2025-08-08T22:57:38.786039" elapsed="0.002106"/>
+<arg>'${log_file}' != ''</arg>
+<arg>Create File</arg>
+<arg>${log_file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-21T23:03:52.059940" elapsed="0.035226"/>
 </kw>
-<kw name="Launch Application" owner="resources">
+<status status="PASS" start="2025-08-21T23:03:52.052517" elapsed="0.042803"/>
+</kw>
+<kw name="Launch Application with browser" owner="Attadence">
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:38.789234" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-08-21T23:03:52.097199" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-08-21T23:09:59.184189" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)")': /session/719eb3f4a4195ef2e4db7d60c7558749/screenshot</msg>
+<msg time="2025-08-21T23:11:59.202911" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)")': /session/719eb3f4a4195ef2e4db7d60c7558749/screenshot</msg>
+<msg time="2025-08-21T23:13:00.292606" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=139.0.7258.127)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6c4d678d5+2802741]
+	GetHandleVerifier [0x0x7ff6c4aceb70+79568]
+	(No symbol) [0x0x7ff6c486c0fa]
+	(No symbol) [0x0x7ff6c4844601]
+	(No symbol) [0x0x7ff6c48f207e]
+	(No symbol) [0x0x7ff6c4912752]
+	(No symbol) [0x0x7ff6c48eaa63]
+	(No symbol) [0x0x7ff6c48b3c91]
+	(No symbol) [0x0x7ff6c48b4a23]
+	GetHandleVerifier [0x0x7ff6c4d92ced+2979917]
+	GetHandleVerifier [0x0x7ff6c4d8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff6c4daacbd+3078173]
+	GetHandleVerifier [0x0x7ff6c4ae836e+184014]
+	GetHandleVerifier [0x0x7ff6c4af024f+216495]
+	GetHandleVerifier [0x0x7ff6c4ad70c4+113700]
+	GetHandleVerifier [0x0x7ff6c4ad7279+114137]
+	GetHandleVerifier [0x0x7ff6c4abdf78+10968]
+	BaseThreadInitThunk [0x0x7ffd40fae8d7+23]
+	RtlUserThreadStart [0x0x7ffd41ffc5dc+44]
+</msg>
+<msg time="2025-08-21T23:13:00.366927" level="FAIL">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-08T22:57:38.788852" elapsed="12.805798"/>
+<status status="FAIL" start="2025-08-21T23:03:52.096780" elapsed="559.165056">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)</status>
+</kw>
+<arg>'${url}' != '' and '${browser}' != ''</arg>
+<arg>Open Browser</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-08-21T23:03:52.096268" elapsed="559.166141">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)</status>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-08T22:57:51.594951" elapsed="0.046596"/>
+<status status="NOT RUN" start="2025-08-21T23:13:11.263467" elapsed="0.000180"/>
 </kw>
 <arg>${url}</arg>
 <arg>${browser}</arg>
-<status status="PASS" start="2025-08-08T22:57:38.788336" elapsed="12.853377"/>
+<status status="FAIL" start="2025-08-21T23:03:52.095646" elapsed="559.168586">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)</status>
 </kw>
 <kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:57:51.645486" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
 <arg>${log_file}</arg>
 <arg>browser opened!!!!:${url}\n</arg>
 <doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:57:51.641936" elapsed="0.003785"/>
+<status status="NOT RUN" start="2025-08-21T23:13:11.264807" elapsed="0.000155"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-08-08T22:57:51.646068" elapsed="0.001223"/>
+<status status="NOT RUN" start="2025-08-21T23:13:11.265429" elapsed="0.000149"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${username}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-08T22:57:51.647458" elapsed="0.887446"/>
+<status status="NOT RUN" start="2025-08-21T23:13:11.266022" elapsed="0.000679"/>
 </kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.550469" level="INFO">${user} = Admin</msg>
+<kw name="Get Row Data" owner="testdata_pandas">
 <var>${user}</var>
 <arg>${file}</arg>
 <arg>${sheet}</arg>
 <arg>${i}</arg>
 <arg>user</arg>
-<status status="PASS" start="2025-08-08T22:57:52.535422" elapsed="0.015107"/>
+<status status="NOT RUN" start="2025-08-21T23:13:11.267296" elapsed="0.000161"/>
 </kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.560306" level="INFO">${pass} = admin123</msg>
+<kw name="Get Row Data" owner="testdata_pandas">
 <var>${pass}</var>
 <arg>${file}</arg>
 <arg>${sheet}</arg>
 <arg>${i}</arg>
 <arg>pass</arg>
-<status status="PASS" start="2025-08-08T22:57:52.550762" elapsed="0.009624"/>
+<status status="NOT RUN" start="2025-08-21T23:13:11.267897" elapsed="0.000124"/>
 </kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.568315" level="INFO">${fname} = srini</msg>
-<var>${fname}</var>
+<kw name="Get Row Data" owner="testdata_pandas">
+<var>${empid}</var>
 <arg>${file}</arg>
 <arg>${sheet}</arg>
 <arg>${i}</arg>
-<arg>fname</arg>
-<status status="PASS" start="2025-08-08T22:57:52.560574" elapsed="0.007804"/>
+<arg>empid</arg>
+<status status="NOT RUN" start="2025-08-21T23:13:11.268450" elapsed="0.000122"/>
 </kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.573441" level="INFO">${mname} = kamali</msg>
-<var>${mname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>mname</arg>
-<status status="PASS" start="2025-08-08T22:57:52.568571" elapsed="0.004919"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.578474" level="INFO">${lname} = amirgokulkutty</msg>
-<var>${lname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>lname</arg>
-<status status="PASS" start="2025-08-08T22:57:52.573727" elapsed="0.004792"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.583178" level="INFO">${emailval} = srikamaliamirgokulkutty@gmail.com</msg>
-<var>${emailval}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>email</arg>
-<status status="PASS" start="2025-08-08T22:57:52.578690" elapsed="0.004531"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.588101" level="INFO">${mobile} = 9988776655</msg>
-<var>${mobile}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>mobile</arg>
-<status status="PASS" start="2025-08-08T22:57:52.583375" elapsed="0.004768"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.593058" level="INFO">${key} = srekamaliamirgokulkutty</msg>
-<var>${key}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>key</arg>
-<status status="PASS" start="2025-08-08T22:57:52.588294" elapsed="0.004811"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:57:52.600430" level="INFO">${text} = all good test1</msg>
-<var>${text}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>text</arg>
-<status status="PASS" start="2025-08-08T22:57:52.593282" elapsed="0.007195"/>
-</kw>
-<kw name="Perform Login" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:52.601479" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
-<arg>${username}</arg>
-<arg>${user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:52.601065" elapsed="0.083310"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:52.685051" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
-<arg>${password}</arg>
-<arg>${pass}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:52.684646" elapsed="0.091508"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:52.776755" level="INFO">Clicking button 'xpath://button[text()=' Login ']'.</msg>
-<arg>${login_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:52.776508" elapsed="0.144602"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:54.300946" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/login.png"&gt;&lt;img src="../results/login.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/login.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T22:57:52.921447" elapsed="1.379656"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:54.301594" level="INFO">Clicking link 'xpath://span[text()='Recruitment']//parent::a'.</msg>
-<arg>${requirement_link}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:54.301330" elapsed="2.294385"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:56.596560" level="INFO">Clicking button 'xpath://button[text()=' Add ']'.</msg>
-<arg>${Add_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:56.596086" elapsed="1.025772"/>
-</kw>
+<kw name="Perform Login for employeee" owner="Attadence">
 <arg>${user}</arg>
 <arg>${pass}</arg>
-<status status="PASS" start="2025-08-08T22:57:52.600724" elapsed="5.021254"/>
+<status status="NOT RUN" start="2025-08-21T23:13:11.269348" elapsed="0.000161"/>
 </kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:57:57.622813" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>Logged in Successfully!!!</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:57:57.622126" elapsed="0.000798"/>
+<kw name="Find Employee attadence records" owner="Attadence">
+<arg>${empid}</arg>
+<status status="NOT RUN" start="2025-08-21T23:13:11.270335" elapsed="0.000177"/>
 </kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${requirement_link}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:57:57.623114" elapsed="0.527586"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${firstname}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.150885" elapsed="0.028364"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${email}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.179566" elapsed="0.025092"/>
-</kw>
-<kw name="Fill the Candidate Information" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:58.205640" level="INFO">Typing text 'srini' into text field 'name=firstName'.</msg>
-<arg>${firstname}</arg>
-<arg>${fname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.205407" elapsed="0.117141"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:58.323156" level="INFO">Typing text 'kamali' into text field 'name=middleName'.</msg>
-<arg>${middlename}</arg>
-<arg>${mname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.322812" elapsed="0.176469"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:58.500025" level="INFO">Typing text 'amirgokulkutty' into text field 'name=lastName'.</msg>
-<arg>${lastname}</arg>
-<arg>${lname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.499586" elapsed="0.124544"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:58.624954" level="INFO">Typing text 'srikamaliamirgokulkutty@gmail.com' into text field 'xpath://label[text()='Email']//parent::div//following-sibling::div//input[@placeholder='Type here']'.</msg>
-<arg>${email}</arg>
-<arg>${emailval}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.624468" elapsed="0.222587"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:58.848717" level="INFO">Typing text '9988776655' into text field 'xpath://label[text()='Contact Number']//parent::div//following-sibling::div//input[@placeholder='Type here']'.</msg>
-<arg>${contact}</arg>
-<arg>${mobile}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.847671" elapsed="0.111717"/>
-</kw>
-<kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:58.959860" level="INFO">Sending C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Srinivasan_Govindhan_Resume.pdf to browser.</msg>
-<arg>${browse_btn}</arg>
-<arg>${upload}</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.959587" elapsed="0.028050"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:58.988070" level="INFO">Typing text 'srekamaliamirgokulkutty' into text field 'xpath://input[@placeholder='Enter comma seperated words...']'.</msg>
-<arg>${canditate_key}</arg>
-<arg>${key}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:58.987814" elapsed="0.131603"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:59.119911" level="INFO">Clicking element 'xpath://input[@placeholder='yyyy-dd-mm']'.</msg>
-<arg>${dateapplication}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.119623" elapsed="0.083505"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${dateapplication}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.203308" elapsed="0.028913"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:59.232984" level="INFO">Typing text 'all good test1' into text field 'xpath://label[text()='Notes']//following::div//textarea'.</msg>
-<arg>${textarea}</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.232457" elapsed="0.101746"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:59.686595" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/success.png"&gt;&lt;img src="../results/success.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/success.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.334398" elapsed="0.352376"/>
-</kw>
-<arg>${fname}</arg>
-<arg>${mname}</arg>
-<arg>${lname}</arg>
-<arg>${emailval}</arg>
-<arg>${mobile}</arg>
-<arg>${upload}</arg>
-<arg>${key}</arg>
-<arg>${text}</arg>
-<status status="PASS" start="2025-08-08T22:57:58.204911" elapsed="1.481999"/>
-</kw>
-<kw name="Save the candidate details" owner="resources">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:59.687766" level="INFO">Clicking button 'xpath://button[text()=' Save ']'.</msg>
-<arg>${save_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.687538" elapsed="0.167436"/>
-</kw>
-<status status="PASS" start="2025-08-08T22:57:59.687175" elapsed="0.168007"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:57:59.856532" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>Successfully Added Candidate!!!</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.855586" elapsed="0.001136"/>
-</kw>
-<var name="${i}">2</var>
-<status status="PASS" start="2025-08-08T22:57:38.785855" elapsed="21.071020"/>
-</iter>
-<iter>
-<kw name="create log file" owner="resources">
-<kw name="Remove File" owner="OperatingSystem">
-<msg time="2025-08-08T22:57:59.862199" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<doc>Removes a file with the given path.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.860859" elapsed="0.001564"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<msg time="2025-08-08T22:57:59.864051" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.862727" elapsed="0.001495"/>
-</kw>
-<status status="PASS" start="2025-08-08T22:57:59.858231" elapsed="0.006164"/>
-</kw>
-<kw name="Launch Application" owner="resources">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:57:59.869713" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-08T22:57:59.865472" elapsed="9.829320"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-08T22:58:09.695192" elapsed="2.442974"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<status status="PASS" start="2025-08-08T22:57:59.864708" elapsed="12.273602"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:12.139203" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>browser opened!!!!:${url}\n</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:58:12.138469" elapsed="0.000844"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-08-08T22:58:12.139549" elapsed="0.002086"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${username}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-08T22:58:12.141798" elapsed="0.607064"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.753711" level="INFO">${user} = Admin</msg>
-<var>${user}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>user</arg>
-<status status="PASS" start="2025-08-08T22:58:12.749046" elapsed="0.004707"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.758122" level="INFO">${pass} = admin123</msg>
-<var>${pass}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>pass</arg>
-<status status="PASS" start="2025-08-08T22:58:12.753919" elapsed="0.004242"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.762494" level="INFO">${fname} = Kamali</msg>
-<var>${fname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>fname</arg>
-<status status="PASS" start="2025-08-08T22:58:12.758308" elapsed="0.004226"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.767817" level="INFO">${mname} = kutty</msg>
-<var>${mname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>mname</arg>
-<status status="PASS" start="2025-08-08T22:58:12.762812" elapsed="0.005051"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.772212" level="INFO">${lname} = vasan</msg>
-<var>${lname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>lname</arg>
-<status status="PASS" start="2025-08-08T22:58:12.768013" elapsed="0.004252"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.776575" level="INFO">${emailval} = srikamaliamirgokulkutty121212@gmail.com</msg>
-<var>${emailval}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>email</arg>
-<status status="PASS" start="2025-08-08T22:58:12.772419" elapsed="0.004196"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.783583" level="INFO">${mobile} = 9900112211</msg>
-<var>${mobile}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>mobile</arg>
-<status status="PASS" start="2025-08-08T22:58:12.776755" elapsed="0.006911"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.790676" level="INFO">${key} = srekamaliamirgokulkutty</msg>
-<var>${key}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>key</arg>
-<status status="PASS" start="2025-08-08T22:58:12.783942" elapsed="0.006780"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:12.795462" level="INFO">${text} = all good test2</msg>
-<var>${text}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>text</arg>
-<status status="PASS" start="2025-08-08T22:58:12.790882" elapsed="0.004647"/>
-</kw>
-<kw name="Perform Login" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:12.796690" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
-<arg>${username}</arg>
-<arg>${user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:12.796392" elapsed="0.132973"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:12.930152" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
-<arg>${password}</arg>
-<arg>${pass}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:12.929681" elapsed="0.094881"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:13.024995" level="INFO">Clicking button 'xpath://button[text()=' Login ']'.</msg>
-<arg>${login_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:13.024775" elapsed="0.078381"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:15.054665" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/login.png"&gt;&lt;img src="../results/login.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/login.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T22:58:13.103365" elapsed="1.951436"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:15.055279" level="INFO">Clicking link 'xpath://span[text()='Recruitment']//parent::a'.</msg>
-<arg>${requirement_link}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:15.054993" elapsed="1.747993"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:16.803429" level="INFO">Clicking button 'xpath://button[text()=' Add ']'.</msg>
-<arg>${Add_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:16.803203" elapsed="1.317725"/>
-</kw>
-<arg>${user}</arg>
-<arg>${pass}</arg>
-<status status="PASS" start="2025-08-08T22:58:12.795967" elapsed="5.325089"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:18.121828" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>Logged in Successfully!!!</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:58:18.121212" elapsed="0.000718"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${requirement_link}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:58:18.122100" elapsed="0.546674"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${firstname}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:58:18.668967" elapsed="0.024253"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${email}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:58:18.693410" elapsed="0.037756"/>
-</kw>
-<kw name="Fill the Candidate Information" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:18.732316" level="INFO">Typing text 'Kamali' into text field 'name=firstName'.</msg>
-<arg>${firstname}</arg>
-<arg>${fname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:18.732091" elapsed="0.143081"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:18.875811" level="INFO">Typing text 'kutty' into text field 'name=middleName'.</msg>
-<arg>${middlename}</arg>
-<arg>${mname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:18.875439" elapsed="0.109178"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:18.985558" level="INFO">Typing text 'vasan' into text field 'name=lastName'.</msg>
-<arg>${lastname}</arg>
-<arg>${lname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:18.984986" elapsed="0.088200"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.073656" level="INFO">Typing text 'srikamaliamirgokulkutty121212@gmail.com' into text field 'xpath://label[text()='Email']//parent::div//following-sibling::div//input[@placeholder='Type here']'.</msg>
-<arg>${email}</arg>
-<arg>${emailval}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.073378" elapsed="0.162321"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.236417" level="INFO">Typing text '9900112211' into text field 'xpath://label[text()='Contact Number']//parent::div//following-sibling::div//input[@placeholder='Type here']'.</msg>
-<arg>${contact}</arg>
-<arg>${mobile}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.235974" elapsed="0.087688"/>
-</kw>
-<kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.324111" level="INFO">Sending C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Srinivasan_Govindhan_Resume.pdf to browser.</msg>
-<arg>${browse_btn}</arg>
-<arg>${upload}</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.323843" elapsed="0.028555"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.352981" level="INFO">Typing text 'srekamaliamirgokulkutty' into text field 'xpath://input[@placeholder='Enter comma seperated words...']'.</msg>
-<arg>${canditate_key}</arg>
-<arg>${key}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.352595" elapsed="0.121133"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.474945" level="INFO">Clicking element 'xpath://input[@placeholder='yyyy-dd-mm']'.</msg>
-<arg>${dateapplication}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.474342" elapsed="0.086555"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${dateapplication}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.561076" elapsed="0.032502"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.594089" level="INFO">Typing text 'all good test2' into text field 'xpath://label[text()='Notes']//following::div//textarea'.</msg>
-<arg>${textarea}</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.593787" elapsed="0.146601"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.866723" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/success.png"&gt;&lt;img src="../results/success.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/success.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.740698" elapsed="0.126157"/>
-</kw>
-<arg>${fname}</arg>
-<arg>${mname}</arg>
-<arg>${lname}</arg>
-<arg>${emailval}</arg>
-<arg>${mobile}</arg>
-<arg>${upload}</arg>
-<arg>${key}</arg>
-<arg>${text}</arg>
-<status status="PASS" start="2025-08-08T22:58:18.731566" elapsed="1.135451"/>
-</kw>
-<kw name="Save the candidate details" owner="resources">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:19.867674" level="INFO">Clicking button 'xpath://button[text()=' Save ']'.</msg>
-<arg>${save_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:19.867483" elapsed="0.148897"/>
-</kw>
-<status status="PASS" start="2025-08-08T22:58:19.867232" elapsed="0.149356"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:20.018119" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>Successfully Added Candidate!!!</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:58:20.017050" elapsed="0.001290"/>
-</kw>
-<var name="${i}">3</var>
-<status status="PASS" start="2025-08-08T22:57:59.857666" elapsed="20.160826"/>
-</iter>
-<iter>
-<kw name="create log file" owner="resources">
-<kw name="Remove File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:20.020254" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<doc>Removes a file with the given path.</doc>
-<status status="PASS" start="2025-08-08T22:58:20.019611" elapsed="0.000925"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:20.021376" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-08-08T22:58:20.020740" elapsed="0.000725"/>
-</kw>
-<status status="PASS" start="2025-08-08T22:58:20.019136" elapsed="0.002436"/>
-</kw>
-<kw name="Launch Application" owner="resources">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:20.022320" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-08T22:58:20.022112" elapsed="13.736292"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-08T22:58:33.758674" elapsed="0.041514"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<status status="PASS" start="2025-08-08T22:58:20.021742" elapsed="13.778792"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:33.802320" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>browser opened!!!!:${url}\n</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:58:33.801140" elapsed="0.001312"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-08-08T22:58:33.802727" elapsed="0.002703"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${username}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-08T22:58:33.805597" elapsed="0.510397"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.321662" level="INFO">${user} = Admin</msg>
-<var>${user}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>user</arg>
-<status status="PASS" start="2025-08-08T22:58:34.316217" elapsed="0.005497"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.326537" level="INFO">${pass} = admin123</msg>
-<var>${pass}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>pass</arg>
-<status status="PASS" start="2025-08-08T22:58:34.321873" elapsed="0.004711"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.331221" level="INFO">${fname} = amir</msg>
-<var>${fname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>fname</arg>
-<status status="PASS" start="2025-08-08T22:58:34.326752" elapsed="0.004518"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.335698" level="INFO">${mname} = gokul</msg>
-<var>${mname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>mname</arg>
-<status status="PASS" start="2025-08-08T22:58:34.331427" elapsed="0.004312"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.342969" level="INFO">${lname} = geegovind</msg>
-<var>${lname}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>lname</arg>
-<status status="PASS" start="2025-08-08T22:58:34.335895" elapsed="0.007119"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.347426" level="INFO">${emailval} = srikamaliamirgokulkutty1234@gmail.com</msg>
-<var>${emailval}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>email</arg>
-<status status="PASS" start="2025-08-08T22:58:34.343176" elapsed="0.004293"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.351834" level="INFO">${mobile} = 9122222222</msg>
-<var>${mobile}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>mobile</arg>
-<status status="PASS" start="2025-08-08T22:58:34.347621" elapsed="0.004254"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.356603" level="INFO">${key} = srekamaliamirgokulkutty</msg>
-<var>${key}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>key</arg>
-<status status="PASS" start="2025-08-08T22:58:34.352022" elapsed="0.004625"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:58:34.361455" level="INFO">${text} = all good test3</msg>
-<var>${text}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>${i}</arg>
-<arg>text</arg>
-<status status="PASS" start="2025-08-08T22:58:34.356793" elapsed="0.004711"/>
-</kw>
-<kw name="Perform Login" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:34.362261" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
-<arg>${username}</arg>
-<arg>${user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:34.362049" elapsed="0.111906"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:34.474503" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
-<arg>${password}</arg>
-<arg>${pass}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:34.474218" elapsed="0.093385"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:34.568140" level="INFO">Clicking button 'xpath://button[text()=' Login ']'.</msg>
-<arg>${login_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:34.567824" elapsed="0.081969"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:53.775760" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/login.png"&gt;&lt;img src="../results/login.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/login.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T22:58:34.650022" elapsed="19.125861"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:53.776282" level="INFO">Clicking link 'xpath://span[text()='Recruitment']//parent::a'.</msg>
-<arg>${requirement_link}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:53.776061" elapsed="1.441201"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:55.217802" level="INFO">Clicking button 'xpath://button[text()=' Add ']'.</msg>
-<arg>${Add_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:55.217492" elapsed="1.267194"/>
-</kw>
-<arg>${user}</arg>
-<arg>${pass}</arg>
-<status status="PASS" start="2025-08-08T22:58:34.361720" elapsed="22.123090"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:56.485619" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>Logged in Successfully!!!</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:58:56.484971" elapsed="0.000739"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${requirement_link}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:58:56.485964" elapsed="0.632860"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${firstname}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:58:57.119082" elapsed="0.025879"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${email}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-08T22:58:57.145154" elapsed="0.023939"/>
-</kw>
-<kw name="Fill the Candidate Information" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:57.170213" level="INFO">Typing text 'amir' into text field 'name=firstName'.</msg>
-<arg>${firstname}</arg>
-<arg>${fname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:57.169981" elapsed="0.163757"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:57.334448" level="INFO">Typing text 'gokul' into text field 'name=middleName'.</msg>
-<arg>${middlename}</arg>
-<arg>${mname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:57.334006" elapsed="0.138881"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:57.473325" level="INFO">Typing text 'geegovind' into text field 'name=lastName'.</msg>
-<arg>${lastname}</arg>
-<arg>${lname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:57.473075" elapsed="0.139004"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:57.613219" level="INFO">Typing text 'srikamaliamirgokulkutty1234@gmail.com' into text field 'xpath://label[text()='Email']//parent::div//following-sibling::div//input[@placeholder='Type here']'.</msg>
-<arg>${email}</arg>
-<arg>${emailval}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:57.612539" elapsed="0.355261"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:57.971187" level="INFO">Typing text '9122222222' into text field 'xpath://label[text()='Contact Number']//parent::div//following-sibling::div//input[@placeholder='Type here']'.</msg>
-<arg>${contact}</arg>
-<arg>${mobile}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:57.968606" elapsed="0.172013"/>
-</kw>
-<kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:58.141052" level="INFO">Sending C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Srinivasan_Govindhan_Resume.pdf to browser.</msg>
-<arg>${browse_btn}</arg>
-<arg>${upload}</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.140795" elapsed="0.027096"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:58.168321" level="INFO">Typing text 'srekamaliamirgokulkutty' into text field 'xpath://input[@placeholder='Enter comma seperated words...']'.</msg>
-<arg>${canditate_key}</arg>
-<arg>${key}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.168077" elapsed="0.207019"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:58.375739" level="INFO">Clicking element 'xpath://input[@placeholder='yyyy-dd-mm']'.</msg>
-<arg>${dateapplication}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.375371" elapsed="0.167566"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${dateapplication}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.543109" elapsed="0.032405"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:58.576247" level="INFO">Typing text 'all good test3' into text field 'xpath://label[text()='Notes']//following::div//textarea'.</msg>
-<arg>${textarea}</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.575713" elapsed="0.106722"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:58.843839" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/success.png"&gt;&lt;img src="../results/success.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/success.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.682775" elapsed="0.161170"/>
-</kw>
-<arg>${fname}</arg>
-<arg>${mname}</arg>
-<arg>${lname}</arg>
-<arg>${emailval}</arg>
-<arg>${mobile}</arg>
-<arg>${upload}</arg>
-<arg>${key}</arg>
-<arg>${text}</arg>
-<status status="PASS" start="2025-08-08T22:58:57.169337" elapsed="1.674711"/>
-</kw>
-<kw name="Save the candidate details" owner="resources">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:58.844714" level="INFO">Clicking button 'xpath://button[text()=' Save ']'.</msg>
-<arg>${save_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.844487" elapsed="0.083985"/>
-</kw>
-<status status="PASS" start="2025-08-08T22:58:58.844243" elapsed="0.084350"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:58:58.929393" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>Successfully Added Candidate!!!</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.928737" elapsed="0.000838"/>
-</kw>
-<var name="${i}">4</var>
-<status status="PASS" start="2025-08-08T22:58:20.018854" elapsed="38.910875"/>
+<var name="${i}">0</var>
+<status status="FAIL" start="2025-08-21T23:03:52.048654" elapsed="559.222140">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)</status>
 </iter>
 <var>${i}</var>
-<value>2</value>
+<value>0</value>
 <value>${end}</value>
-<status status="PASS" start="2025-08-08T22:57:38.785180" elapsed="80.144653"/>
+<status status="FAIL" start="2025-08-21T23:03:52.046312" elapsed="559.224923">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)</status>
 </for>
 <kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
 <arg>Logout application</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.930398" elapsed="0.000931"/>
+<status status="PASS" start="2025-08-21T23:13:11.273027" elapsed="0.001096"/>
 </kw>
-<status status="PASS" start="2025-08-08T22:57:38.773396" elapsed="80.158277"/>
-</test>
-<test id="s1-t2" name="TC002 Add Candidate without enterd Mandatory values" line="50">
-<kw name="Log To Console" owner="BuiltIn" type="SETUP">
-<arg>Login To Application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.933308" elapsed="0.000491"/>
-</kw>
-<kw name="Launch Application" owner="resources">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:58:58.934796" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-08T22:58:58.934586" elapsed="31.481076"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-08T22:59:30.415932" elapsed="0.039196"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<status status="PASS" start="2025-08-08T22:58:58.934191" elapsed="31.521143"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T22:59:30.532245" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>browser opened!!!!:${url}\n</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T22:59:30.455691" elapsed="0.076828"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:59:30.540499" level="INFO">${user} = Admin</msg>
-<var>${user}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>2</arg>
-<arg>user</arg>
-<status status="PASS" start="2025-08-08T22:59:30.532894" elapsed="0.007655"/>
-</kw>
-<kw name="Read Excel Cell" owner="data">
-<msg time="2025-08-08T22:59:30.556952" level="INFO">${pass} = admin123</msg>
-<var>${pass}</var>
-<arg>${file}</arg>
-<arg>${sheet}</arg>
-<arg>2</arg>
-<arg>pass</arg>
-<status status="PASS" start="2025-08-08T22:59:30.540855" elapsed="0.016145"/>
-</kw>
-<kw name="Perform Login" owner="resources">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:59:30.558186" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
-<arg>${username}</arg>
-<arg>${user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:59:30.557781" elapsed="2.527031"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:59:33.085232" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
-<arg>${password}</arg>
-<arg>${pass}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:59:33.084989" elapsed="0.083262"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T22:59:33.168836" level="INFO">Clicking button 'xpath://button[text()=' Login ']'.</msg>
-<arg>${login_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T22:59:33.168570" elapsed="0.087646"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:13.960483" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/login.png"&gt;&lt;img src="../results/login.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/login.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T22:59:33.256392" elapsed="40.704224"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:13.961067" level="INFO">Clicking link 'xpath://span[text()='Recruitment']//parent::a'.</msg>
-<arg>${requirement_link}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T23:00:13.960832" elapsed="1.476196"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:15.437423" level="INFO">Clicking button 'xpath://button[text()=' Add ']'.</msg>
-<arg>${Add_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T23:00:15.437195" elapsed="1.483985"/>
-</kw>
-<arg>${user}</arg>
-<arg>${pass}</arg>
-<status status="PASS" start="2025-08-08T22:59:30.557382" elapsed="46.363928"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T23:00:16.922968" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>logged\n</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T23:00:16.921754" elapsed="0.001476"/>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${requirement_link}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-08-08T23:00:16.923619" elapsed="0.622949"/>
-</kw>
-<kw name="Save the candidate details" owner="resources">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:17.548396" level="INFO">Clicking button 'xpath://button[text()=' Save ']'.</msg>
-<arg>${save_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-08T23:00:17.547999" elapsed="0.103394"/>
-</kw>
-<status status="PASS" start="2025-08-08T23:00:17.547276" elapsed="0.104246"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T23:00:17.652518" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>SAve button cliked\n</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T23:00:17.651902" elapsed="0.000737"/>
-</kw>
-<kw name="Verify the mandatory field errors" owner="resources">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:17.736024" level="INFO">Element 'xpath://span[text()='Required']//preceding::input[@name='firstName']' is displayed.</msg>
-<arg>${fname}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-08T23:00:17.653298" elapsed="0.082962"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:17.756321" level="INFO">Element 'xpath://span[text()='Required']//preceding::input[@name='lastName']' is displayed.</msg>
-<arg>${lname}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-08T23:00:17.736682" elapsed="0.019734"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:17.795643" level="INFO">Element 'xpath://span[text()='Required']//preceding::input[@placeholder='Type here']' is displayed.</msg>
-<arg>${emailcheck}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-08T23:00:17.756577" elapsed="0.039160"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-08T23:00:35.419477" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="validations.png"&gt;&lt;img src="validations.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>validations.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-08T23:00:17.795894" elapsed="17.623934"/>
-</kw>
-<status status="PASS" start="2025-08-08T23:00:17.652937" elapsed="17.767227"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2025-08-08T23:00:35.422916" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\log_steps.txt&lt;/a&gt;'.</msg>
-<arg>${log_file}</arg>
-<arg>Validation checked!!!</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2025-08-08T23:00:35.421077" elapsed="0.002171"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
-<arg>Logout application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-08T23:00:35.424423" elapsed="0.001135"/>
-</kw>
-<status status="PASS" start="2025-08-08T22:58:58.932611" elapsed="96.493725"/>
+<tag>smoke</tag>
+<status status="FAIL" start="2025-08-21T23:03:42.893485" elapsed="568.381502">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)</status>
 </test>
 <kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
-<arg>close browser</arg>
+<arg>close browser action</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-08T23:00:35.429607" elapsed="0.000896"/>
+<status status="PASS" start="2025-08-21T23:13:11.280207" elapsed="0.001046"/>
 </kw>
-<status status="PASS" start="2025-08-08T22:57:30.281868" elapsed="185.148880"/>
+<status status="FAIL" start="2025-08-21T23:01:48.994114" elapsed="682.287453"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat name="Requirement Suite" id="s1" pass="2" fail="0" skip="0">Requirement Suite</stat>
+<stat name="Timesheet Suite" id="s1" pass="0" fail="1" skip="0">Timesheet Suite</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-08-21T23:09:59.184189" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)")': /session/719eb3f4a4195ef2e4db7d60c7558749/screenshot</msg>
+<msg time="2025-08-21T23:11:59.202911" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=58167): Read timed out. (read timeout=120)")': /session/719eb3f4a4195ef2e4db7d60c7558749/screenshot</msg>
+<msg time="2025-08-21T23:13:00.292606" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=139.0.7258.127)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6c4d678d5+2802741]
+	GetHandleVerifier [0x0x7ff6c4aceb70+79568]
+	(No symbol) [0x0x7ff6c486c0fa]
+	(No symbol) [0x0x7ff6c4844601]
+	(No symbol) [0x0x7ff6c48f207e]
+	(No symbol) [0x0x7ff6c4912752]
+	(No symbol) [0x0x7ff6c48eaa63]
+	(No symbol) [0x0x7ff6c48b3c91]
+	(No symbol) [0x0x7ff6c48b4a23]
+	GetHandleVerifier [0x0x7ff6c4d92ced+2979917]
+	GetHandleVerifier [0x0x7ff6c4d8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff6c4daacbd+3078173]
+	GetHandleVerifier [0x0x7ff6c4ae836e+184014]
+	GetHandleVerifier [0x0x7ff6c4af024f+216495]
+	GetHandleVerifier [0x0x7ff6c4ad70c4+113700]
+	GetHandleVerifier [0x0x7ff6c4ad7279+114137]
+	GetHandleVerifier [0x0x7ff6c4abdf78+10968]
+	BaseThreadInitThunk [0x0x7ffd40fae8d7+23]
+	RtlUserThreadStart [0x0x7ffd41ffc5dc+44]
+</msg>
 </errors>
 </robot>

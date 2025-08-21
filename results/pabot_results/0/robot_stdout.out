@@ -1,0 +1,14 @@
+==============================================================================
+Timesheet Suite                                                               
+==============================================================================
+create log file
+TC002 Attandence funch in and fun out                                 Login To Application
+2
+Logout application
+| PASS |
+------------------------------------------------------------------------------
+close browser
+Timesheet Suite                                                       | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\results\pabot_results\0\output.xml

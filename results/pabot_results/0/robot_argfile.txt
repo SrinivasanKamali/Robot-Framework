@@ -1,0 +1,17 @@
+--suite Timesheet Suite
+--include sanity
+--variable CALLER_ID:f14b699d4b154b17bf0eea19ba720936
+--variable PABOTLIBURI:127.0.0.1:8270
+--variable PABOTEXECUTIONPOOLID:0
+--variable PABOTISLASTEXECUTIONINPOOL:1
+--variable PABOTNUMBEROFPROCESSES:4
+--variable PABOTQUEUEINDEX:0
+--variable PABOTLASTLEVEL:
+--outputdir results\pabot_results\0
+--listener RobotStackTracer
+--log NONE
+--report NONE
+--xunit NONE
+--consolecolors off
+--consolemarkers off
+TestCases/Timesheet_Suite.robot

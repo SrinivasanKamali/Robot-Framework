@@ -1,0 +1,43 @@
+[ WARN ] Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_139_WINDOWS)
+[ WARN ] Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)
+[ WARN ] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)")': /session/64cc4af79df4bedb7a0019feaf1697ac/screenshot
+[ WARN ] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=57464): Read timed out. (read timeout=120)")': /session/64cc4af79df4bedb7a0019feaf1697ac/screenshot
+[ WARN ] Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7976ae785+22117]
+	(No symbol) [0x0x7ff7975fee00]
+	(No symbol) [0x0x7ff7973ccdb0]
+	(No symbol) [0x0x7ff79740dcc6]
+	(No symbol) [0x0x7ff79740e9b3]
+	(No symbol) [0x0x7ff79750907d]
+	(No symbol) [0x0x7ff797515fe8]
+	GetHandleVerifier [0x0x7ff79778f277+942423]
+	GetHandleVerifier [0x0x7ff797798221+979201]
+	(No symbol) [0x0x7ff79760c3b1]
+	(No symbol) [0x0x7ff797604d64]
+	(No symbol) [0x0x7ff797604eb3]
+	(No symbol) [0x0x7ff7975f7016]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+
+[ WARN ] Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7976ae785+22117]
+	(No symbol) [0x0x7ff7975fee00]
+	(No symbol) [0x0x7ff7973ccdb0]
+	(No symbol) [0x0x7ff79740d573]
+	(No symbol) [0x0x7ff79743a6b2]
+	(No symbol) [0x0x7ff7973e5c1b]
+	(No symbol) [0x0x7ff7974372a9]
+	(No symbol) [0x0x7ff7974369ba]
+	(No symbol) [0x0x7ff7973a2c75]
+	(No symbol) [0x0x7ff79750907d]
+	(No symbol) [0x0x7ff797515fe8]
+	GetHandleVerifier [0x0x7ff79778f277+942423]
+	GetHandleVerifier [0x0x7ff797798221+979201]
+	(No symbol) [0x0x7ff79760c3b1]
+	(No symbol) [0x0x7ff7973a17a7]
+	GetHandleVerifier [0x0x7ff7978ea6e8+2364872]
+	BaseThreadInitThunk [0x0x7ffbafe7e8d7+23]
+	RtlUserThreadStart [0x0x7ffbb12dc5dc+44]
+

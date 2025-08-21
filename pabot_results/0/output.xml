@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-13T19:17:18.921167" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases">
+<suite id="s1-s1" name="Requirement Suite" source="C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestCases\Requirement_Suite.robot">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>create log file</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.829148" elapsed="0.001847"/>
+</kw>
+<test id="s1-s1-t1" name="TC001_Add Candidate with All Details" line="21">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Login To Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.833205" elapsed="0.000670"/>
+</kw>
+<kw name="Get Max Row" owner="data">
+<msg time="2025-08-13T19:17:25.853489" level="INFO">${total_row} = 2</msg>
+<var>${total_row}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<status status="PASS" start="2025-08-13T19:17:25.834351" elapsed="0.019446"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-13T19:17:25.855582" level="INFO">${end} = 3</msg>
+<var>${end}</var>
+<arg>${total_row} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.854498" elapsed="0.001246"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${end}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.856239" elapsed="0.000664"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="create log file" owner="resources">
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2025-08-13T19:17:25.859771" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.858854" elapsed="0.001216"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-08-13T19:17:25.861654" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt"&gt;C:\Users\srini.SRINIKAMALI\PycharmProjects\Robot Framework-Automation\TestData\log_steps.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.860470" elapsed="0.001486"/>
+</kw>
+<status status="PASS" start="2025-08-13T19:17:25.858152" elapsed="0.004078"/>
+</kw>
+<kw name="Launch Application" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:17:25.864913" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-13T19:17:25.863945" elapsed="47.036944"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-13T19:18:12.901482" elapsed="1.806638"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-08-13T19:17:25.862684" elapsed="48.845690"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:18:14.710066" level="FAIL">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</msg>
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="FAIL" start="2025-08-13T19:18:14.708648" elapsed="0.001981">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.711932" elapsed="0.000231"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.712694" elapsed="0.000227"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>user</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.713326" elapsed="0.000203"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>pass</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.713949" elapsed="0.000194"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${fname}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>fname</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.714540" elapsed="0.000176"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${mname}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>mname</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.715104" elapsed="0.000167"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${lname}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>lname</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.715653" elapsed="0.000175"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${emailval}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>email</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.716234" elapsed="0.000173"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${mobile}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>mobile</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.716896" elapsed="0.000222"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${key}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>key</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.717416" elapsed="0.000139"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${text}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>${i}</arg>
+<arg>text</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.717924" elapsed="0.000204"/>
+</kw>
+<kw name="Perform Login" owner="resources">
+<arg>${user}</arg>
+<arg>${pass}</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.718799" elapsed="0.000180"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>Logged in Successfully!!!</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.719344" elapsed="0.000233"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${requirement_link}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.720041" elapsed="0.000158"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${firstname}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.720458" elapsed="0.000140"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${email}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.720870" elapsed="0.000133"/>
+</kw>
+<kw name="Fill the Candidate Information" owner="resources">
+<arg>${fname}</arg>
+<arg>${mname}</arg>
+<arg>${lname}</arg>
+<arg>${emailval}</arg>
+<arg>${mobile}</arg>
+<arg>${upload}</arg>
+<arg>${key}</arg>
+<arg>${text}</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:14.721380" elapsed="0.000146"/>
+</kw>
+<kw name="Save the candidate details" owner="resources">
+<status status="NOT RUN" start="2025-08-13T19:18:14.722262" elapsed="0.000217"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>Successfully Added Candidate!!!</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:14.722845" elapsed="0.000196"/>
+</kw>
+<var name="${i}">2</var>
+<status status="FAIL" start="2025-08-13T19:17:25.857776" elapsed="48.865569">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<value>${end}</value>
+<status status="FAIL" start="2025-08-13T19:17:25.857087" elapsed="48.866519">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</for>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Logout application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:18:14.724187" elapsed="0.001127"/>
+</kw>
+<status status="FAIL" start="2025-08-13T19:17:25.831890" elapsed="48.893702">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</test>
+<test id="s1-s1-t2" name="TC002 Add Candidate without enterd Mandatory values" line="50">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Login To Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:18:14.727363" elapsed="0.000474"/>
+</kw>
+<kw name="Launch Application" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-13T19:18:14.729489" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-13T19:18:14.728910" elapsed="44.670406"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-13T19:18:59.399755" elapsed="0.058344"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-08-13T19:18:14.728144" elapsed="44.730174"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2025-08-13T19:18:59.462250" level="FAIL">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</msg>
+<arg>${log_file}</arg>
+<arg>browser opened!!!!:${url}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="FAIL" start="2025-08-13T19:18:59.459150" elapsed="0.003422">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${user}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>2</arg>
+<arg>user</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:59.463295" elapsed="0.000168"/>
+</kw>
+<kw name="Read Excel Cell" owner="data">
+<var>${pass}</var>
+<arg>${file}</arg>
+<arg>${sheet}</arg>
+<arg>2</arg>
+<arg>pass</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:59.463808" elapsed="0.000203"/>
+</kw>
+<kw name="Perform Login" owner="resources">
+<arg>${user}</arg>
+<arg>${pass}</arg>
+<status status="NOT RUN" start="2025-08-13T19:18:59.464605" elapsed="0.000201"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>logged\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:59.465156" elapsed="0.000152"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${requirement_link}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:59.465661" elapsed="0.000161"/>
+</kw>
+<kw name="Save the candidate details" owner="resources">
+<status status="NOT RUN" start="2025-08-13T19:18:59.466196" elapsed="0.000179"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>SAve button cliked\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:59.466678" elapsed="0.000151"/>
+</kw>
+<kw name="Verify the mandatory field errors" owner="resources">
+<status status="NOT RUN" start="2025-08-13T19:18:59.467369" elapsed="0.000198"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${log_file}</arg>
+<arg>Validation checked!!!</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-08-13T19:18:59.467880" elapsed="0.000149"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Logout application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:18:59.468697" elapsed="0.000543"/>
+</kw>
+<status status="FAIL" start="2025-08-13T19:18:14.726445" elapsed="44.743028">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\srini.SRINIKAMALI\\PycharmProjects\\Robot Framework-Automation\\TestData\\log_steps.txt'</status>
+</test>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>close browser</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-13T19:18:59.471705" elapsed="0.000754"/>
+</kw>
+<status status="FAIL" start="2025-08-13T19:17:19.058709" elapsed="100.415817"/>
+</suite>
+<status status="FAIL" start="2025-08-13T19:17:19.003029" elapsed="100.474382"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TestCases" id="s1" pass="0" fail="2" skip="0">TestCases</stat>
+<stat name="Requirement Suite" id="s1-s1" pass="0" fail="2" skip="0">TestCases.Requirement Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,6 @@
+datasources:ab4d91849abfba0227bdc251bdc80592ee432657
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:4e8b51afcc5337d81dcb7c698a4350032163f43d
+--suite TestCases.Requirement Suite
+--suite TestCases.Timesheet Suite
